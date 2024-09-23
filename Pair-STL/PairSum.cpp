@@ -14,45 +14,23 @@ vector<string> split(const string &);
  */
 
 long largestValue(vector<int> A) {
-    long max_so_far = A[0];
-    long current_max = A[0];
-
-    for (int i = 1; i < A.size(); i++) {
-        current_max = max((long)A[i], current_max + A[i]);
-        max_so_far = max(max_so_far, current_max);  
+    long max_value = LONG_MIN;  // Inicializamos el máximo valor con el valor mínimo posible
+    
+    // Recorremos todos los posibles subarreglos
+    for (int i = 0; i < A.size(); i++) {
+        for (int j = i + 1; j < A.size(); j++) {
+            long sum_of_products = 0;
+            // Para cada subarreglo, calculamos la suma de productos de todos los pares
+            for (int k = i; k <= j; k++) {
+                for (int l = k + 1; l <= j; l++) {
+                    sum_of_products += A[k] * A[l];
+                }
+            }
+            max_value = max(max_value, sum_of_products);  // Actualizamos el máximo valor
+        }
     }
     
-    return max_so_far;
-}
-
-int main(){
-    ofstream fout(getenv("OUTPUT_PATH"));
-
-    string n_temp;
-    getline(cin, n_temp);
-
-    int n = stoi(ltrim(rtrim(n_temp)));
-
-    string A_temp_temp;
-    getline(cin, A_temp_temp);
-
-    vector<string> A_temp = split(rtrim(A_temp_temp));
-
-    vector<int> A(n);
-
-    for (int i = 0; i < n; i++) {
-        int A_item = stoi(A_temp[i]);
-
-        A[i] = A_item;
-    }
-
-    long result = largestValue(A);
-
-    fout << result << "\n";
-
-    fout.close();
-
-    return 0;
+    return max_value;  // Retornamos el mayor valor obtenido
 }
 
 string ltrim(const string &str) {
@@ -94,3 +72,28 @@ vector<string> split(const string &str) {
     return tokens;
 }
 
+int main()
+{
+    string n_temp;
+    getline(cin, n_temp);
+
+    int n = stoi(ltrim(rtrim(n_temp)));
+
+    string A_temp_temp;
+    getline(cin, A_temp_temp);
+
+    vector<string> A_temp = split(rtrim(A_temp_temp));
+
+    vector<int> A(n);
+
+    for (int i = 0; i < n; i++) {
+        int A_item = stoi(A_temp[i]);
+        A[i] = A_item;
+    }
+
+    long result = largestValue(A);
+
+    cout << result << "\n";
+
+    return 0;
+}
