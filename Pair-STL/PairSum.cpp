@@ -14,12 +14,18 @@ vector<string> split(const string &);
  */
 
 long largestValue(vector<int> A) {
-    // Return the largest value of any of A's nonempty subarrays.
+    long max_so_far = A[0];
+    long current_max = A[0];
 
+    for (int i = 1; i < A.size(); i++) {
+        current_max = max((long)A[i], current_max + A[i]);
+        max_so_far = max(max_so_far, current_max);  
+    }
+    
+    return max_so_far;
 }
 
-int main()
-{
+int main(){
     ofstream fout(getenv("OUTPUT_PATH"));
 
     string n_temp;
