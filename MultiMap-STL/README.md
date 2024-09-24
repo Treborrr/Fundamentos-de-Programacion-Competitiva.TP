@@ -41,4 +41,4 @@ Dado que se trata de un problema de función, no es necesario realizar ninguna e
 - \(1 \leq n \leq 1000\)
 - \(1 \leq A_i \leq 10^6\)
 ```
-
+LINK: https://www.geeksforgeeks.org/problems/multimap-operations/1
