@@ -1,4 +1,4 @@
-# Operaciones Multimapa
+# MultiMap STL
 
 Se le proporciona una matriz `A` de tamaño `N`. Debe insertar los elementos de `A` en un **mapa múltiple** (elemento como clave e índice como valor) y mostrar los resultados. Además, debe borrar un elemento `x` determinado del mapa múltiple e imprimir `"borrado x"` si se borró correctamente; de lo contrario, imprima `"no encontrado"`.
 
