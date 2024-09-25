@@ -59,3 +59,20 @@ string constructString(vector<int> &freq) {
 
     return best_result;
 }
+
+int main() {
+    vector<int> freq(26);
+
+    // Leer los 26 valores de entrada
+    for (int i = 0; i < 26; i++) {
+        cin >> freq[i];
+    }
+
+    // Construir y obtener la cadena lexicográficamente más pequeña con suma mínima de KMP
+    string result = constructString(freq);
+
+    // Imprimir el resultado
+    cout << result << endl;
+
+    return 0;
+}
