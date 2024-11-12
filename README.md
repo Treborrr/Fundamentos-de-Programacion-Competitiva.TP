@@ -1,3 +1,7 @@
+Miembros : 
+-Robert Leonardo Alvarado Valle 
+-Andre Angel Chipana Rios
+
 # Ejercicios STL y Algoritmo KMP
 
 ### Descripción
