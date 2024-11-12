@@ -1,6 +1,7 @@
-Miembros : 
--Robert Leonardo Alvarado Valle 
--Andre Angel Chipana Rios
+<h1>Colaboradores : </h1>
+- Robert Leonardo Alvarado Valle 
+<br>
+- Andre Angel Chipana Rios
 
 # Ejercicios STL y Algoritmo KMP
 
